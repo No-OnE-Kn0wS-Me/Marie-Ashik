@@ -17,6 +17,8 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
+START_IMG="image url"
+
 PM_START_TEXT = """
 ഹായ് {}, എന്റെ പേര് {}! എന്നെ ഉപയോഗിക്കേണ്ടത് എങ്ങനെ ആണെന്നുള്ളതിൽ എന്തേലും സംശയം ഉണ്ടെങ്കിൽ /help കൊടുത്താൽ മതിയാകും... 
 എന്റെ ന്യൂ ഫീച്ചേർസ്  @Jinnzzupdates ചാനലിൽ  ഇടുന്നതായിരിക്കും. സംശയങ്ങൾക്ക് @cybersecurityhacker എന്ന ഐഡിയിൽ മെസ്സേജ് അയക്കുക....
@@ -141,12 +143,14 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN)
+            update.effective_message.reply_photo(START_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),reply_markup=InlineKeyboardMarkup(
+                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" 👥 channel.",url="https://telegram.dog/username")],  
+                                                [InlineKeyboardButton(text="Creater",url="url"),InlineKeyboardButton(text="Mai Source",url="url")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
-        update.effective_message.reply_text("ഹായ് മച്ചാൻ,  എന്താണ്??")
+         
 
+        update.effective_message.reply_text("Heya, How can I help you? 🙂",reply_markup=InlineKeyboardMarkup(
+                                                [[InlineKeyboardButton(text="❓ Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" Mai source",url="url")]]))
 
 # for test purposes
 def error_callback(bot, update, error):
