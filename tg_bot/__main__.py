@@ -17,7 +17,7 @@ from tg_bot.modules import ALL_MODULES
 from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
-START_IMG="https://telegra.ph/file/dd451b9d186d65a2187d5.jpg"
+START_IMG = "https://telegra.ph/file/dd451b9d186d65a2187d5.jpg"
 
 PM_START_TEXT = """
 ഹായ് {}, എന്റെ പേര് {}! എന്നെ ഉപയോഗിക്കേണ്ടത് എങ്ങനെ ആണെന്നുള്ളതിൽ എന്തേലും സംശയം ഉണ്ടെങ്കിൽ /help കൊടുത്താൽ മതിയാകും... 
@@ -144,7 +144,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(START_IMG,PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" 👥 channel.",url="https://telegram.dog/username")],  
+                                                [[InlineKeyboardButton(text="Help",url="t.me/{}?start=help".format(bot.username)),InlineKeyboardButton(text=" 👥 channel.",url="https://t.me/Mothirajinn_bot")],  
                                                 [InlineKeyboardButton(text="Creater",url="https://t.me/Mothirajinn_bot"),InlineKeyboardButton(text="Mai Source",url="https://t.me/Mothirajinn_bot")]]),disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
     else:
          
