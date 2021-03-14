@@ -19,7 +19,7 @@ Alternatively, [find me on telegram](https://t.me/SonOfLars)! (Keep all support 
 
 ## You can also tap the Deploy To Heroku button below to deploy straight to Heroku!
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Ashikmuhammedjinn/Marie_Ashik)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/No-OnE-Kn0wS-Me/Marie-Ashik)
 
 ## Starting the bot.
 
